@@ -1,0 +1,11 @@
+.red {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.default {
+    color: grey;
+    font-size: 40px;
+    font-weight: bold;
+}
