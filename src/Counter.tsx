@@ -3,18 +3,22 @@ import React from "react";
 import {Button} from "./Button";
 
 export type counterPropsType = {
-    counter: number
+    counter:  number
+    message?: string
     increaseCounter: () => void
     reset: () => void
+    max: number
+    min: number
+    error: string
 }
 
 export const Counter = (props: counterPropsType) => {
     return (
         <div className={"counter"}>
-            <Board counter={props.counter}/>
+            <Board error = {props.error} message={props.message} counter={props.counter} max={props.max}/>
             <div>
-                <Button increaseCounter={props.increaseCounter} counter={props.counter}/>
-                <Button reset={props.reset} counter={props.counter}/>
+                <Button max={props.max} increaseCounter={props.increaseCounter} counter={props.counter}/>
+                <Button max={props.max} reset={props.reset} counter={props.counter}/>
             </div>
         </div>
 

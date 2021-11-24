@@ -9,3 +9,16 @@
     font-size: 40px;
     font-weight: bold;
 }
+
+.redText {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.defaultText {
+    color: grey;
+    font-size: 20px;
+    font-weight: bold;
+}
+

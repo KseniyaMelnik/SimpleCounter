@@ -1,17 +1,22 @@
 .App {
+    margin: 0 auto;
+    max-width: 1000px;
     text-align: center;
     padding: 60px;
+    display: flex;
+    justify-content: space-around;
 
 }
 
-.counter {
+.counter,
+.settings {
     background-color: #a887c4;
-    margin: 0 auto;
     width: 300px;
     height: 150px;
     padding: 60px;
     border-radius: 15px;
 }
+
 
 .board {
     width: 200px;
