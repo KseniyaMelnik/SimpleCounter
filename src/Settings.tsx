@@ -6,7 +6,8 @@ type SettingsPropsType = {
     maxValue: number,
     updateNewMinValue(value:number) : void,
     updateNewMaxValue(value:number) : void,
-    setSettings(): void
+    setSettings(): void,
+    buttonDisable: boolean
 }
 
 export const Settings = (props: SettingsPropsType) => {
@@ -28,7 +29,7 @@ export const Settings = (props: SettingsPropsType) => {
                 <div>Start Value<input type="number" value={props.minValue} onChange={onMinValueChange}/></div>
                 <div>Max Value<input type="number" value={props.maxValue} onChange={onMaxValueChange}/></div>
             </div>
-            <button onClick={OnClick}>Set</button>
+            <Button onClick={OnClick} nameBtn={"SET"} buttonDisable={props.buttonDisable}/>
         </div>
     )
 }
