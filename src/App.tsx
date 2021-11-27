@@ -4,7 +4,7 @@ import {Counter} from "./Counter";
 import {Settings} from "./Settings";
 
 function App() {
-    let [counter, setCounter] = useState<number>(0)
+    const [counter, setCounter] = useState<number>(0)
     const [max, setMax] = useState<number>(5)
     const [min, setMin] = useState<number>(0)
     const [message, setMessage] = useState<string>('')
@@ -14,6 +14,7 @@ function App() {
         let minAsString = localStorage.getItem("min")
         if (minAsString) {
             let newMin = JSON.parse(minAsString)
+            setMin(newMin)
             setCounter(newMin)
         }
     },[])
@@ -61,7 +62,6 @@ function App() {
         setMessage('')
         setCounter(min);
         setButtonDisable(true);
-        //localStorage.setItem("max", JSON.stringify(max));
     }
 
     const increaseCounter = () => {
@@ -79,7 +79,7 @@ function App() {
                       maxValue={max}
                       updateNewMinValue={updateNewMinValue}
                       updateNewMaxValue={updateNewMaxValue}
-                      buttonDisable={buttonDisable}/>
+                      buttonSetDisable={buttonDisable}/>
 
             <Counter counter={counter}
                      increaseCounter={increaseCounter}

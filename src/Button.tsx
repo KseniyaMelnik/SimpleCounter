@@ -5,16 +5,18 @@ type buttonPropsType = {
     increaseCounter?: () => void
     reset?: () => void
     max?: number
+    min?: number
     onClick?: () => void
     nameBtn: string
-    buttonDisable?: boolean
+    buttonSetDisable?: boolean
 }
+
 
 export const Button = (props: buttonPropsType) => {
 
     const onClick = props.nameBtn === "INC" ? props.increaseCounter : props.nameBtn === "RESET" ? props.reset : props.onClick;
 
-    const disable = (props.nameBtn === "SET") && props.buttonDisable || (props.nameBtn === "INC") && (props.counter === props.max) || (props.nameBtn === "RESET") && (props.counter === 0)
+    let disable = (props.nameBtn === "SET") && props.buttonSetDisable || (props.nameBtn === "INC") && (props.counter === props.max) || (props.nameBtn === "RESET") && (props.counter === props.min)
 
     return (
         <button disabled={disable} onClick={onClick}>
